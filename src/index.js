@@ -1,20 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-	// your code here
-	function buildToDo(task) {
-		const taskList = document.getElementById("tasks");
-		const taskName = document.createElement("li");
-		taskName.textContent = task;
+function buildToDo(task) {
+	const taskList = document.getElementById("tasks");
+	const taskName = document.createElement("li");
+	taskName.textContent = task;
 
-		taskList.append(taskName);
-	}
+	taskList.append(taskName);
+}
 
-	const form = document.querySelector("#create-task-form");
+const form = document.querySelector("#create-task-form");
 
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
+form.addEventListener("submit", (event) => {
+	event.preventDefault();
 
-		const newTask = event.target["new-task-description"].value;
+	const newTask = document.querySelector("#new-task-description").value;
 
-		buildToDo(newTask);
-	});
+	buildToDo(newTask);
 });
